@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <h1>Agregar nuevo contacto</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.contactname.label }}<br>
+            {{ form.contactname(size=32) }}<br>
+            {% for error in form.contactname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(size=64) }}<br>
+            {% for error in form.description.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.celularnumber.label }}<br>
+            {{ form.celularnumber(size=32) }}<br>
+            {% for error in form.celularnumber.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

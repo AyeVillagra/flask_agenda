@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <title>Mis contactos</title>
+
+
+    {% for contact in contacts %}
+    <div><p>{{ contact.contactname }}</p></div>
+    {% endfor %}
+
+    <a href="{{ url_for('add_contact') }}">Añadir contacto</a>
+
+{% endblock %}

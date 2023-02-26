@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--    el body style indica el color de preferencia guardado, previamente elegido por el usuario-->
+    <body style="background-color: {{ background }}">
+    <h1>Hola, {{ current_user.username.upper() }}!</h1>
+
+    <a href="{{ url_for('contacts') }}">Mis contactos</a>
+
+    <form action="/save_preference" method="post">
+        <label for="background_color">Background Color:</label>
+        <select id="background_color" name="background_color">
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="blue">Azul</option>
+        </select><br><br>
+      <input type="submit" value="Recordar">
+    </form>
+
+
+
+{% endblock %}
